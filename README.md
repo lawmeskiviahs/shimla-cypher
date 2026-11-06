@@ -19,6 +19,12 @@ The form opens a draft in the visitor's email application addressed to `shimlacx
 
 Artist names, photographs, management details and platform links remain placeholders from the supplied design. Replace them with confirmed information as it becomes available. There are no third-party scripts or build dependencies.
 
-## Hosting
+## GitHub Pages hosting
 
-Sites serves the `dist` directory. The existing private Site identity is tracked in `.openai/hosting.json`.
+The deployment workflow in `.github/workflows/pages.yml` publishes only `dist/` to GitHub Pages. The site uses relative asset paths and has no dependency on ChatGPT sign-in.
+
+In the repository's **Settings → Pages**, set **Source** to **GitHub Actions**. GitHub Free requires a public repository for Pages; GitHub Pro also supports publishing from private repositories.
+
+After enabling Pages, open **Actions → Deploy Shimla Cypher to GitHub Pages → Run workflow** for the first deployment. Later changes to `dist/` on `main` deploy automatically. The expected address is `https://lawmeskiviahs.github.io/shimla-cypher/`; the workflow's deployment result confirms when it is live.
+
+The earlier Sites hosting configuration is retained in `.openai/hosting.json` for reference. It is not included in the GitHub Pages deployment.
