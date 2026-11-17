@@ -97,7 +97,7 @@ dialog.addEventListener('close', () => {
 
 const catalogue = '<p>New music is on the way. Releases, artwork, credits and official listening links will appear here.</p><div class="placeholder-row"><span>The catalogue</span><span>Coming soon</span></div>';
 qsa('[data-artist]').forEach((button) => button.addEventListener('click', () => {
-  openDialog(`Artist profile / ${button.dataset.artist}`, '<p>Artist announcements are coming soon. Explore biographies, music and official listening links here as the roster takes shape.</p>' + catalogue, button);
+  openDialog(`Artist profile / ${button.dataset.artist}`, '<p>Biography, music and official listening links are coming soon.</p>' + catalogue, button);
 }));
 qsa('[data-platform]').forEach((button) => button.addEventListener('click', () => {
   const url = config.platforms[button.dataset.platform];
