@@ -12,3 +12,12 @@ dialog{color:var(--paper);background:var(--bg);border:1px solid #ffffff40;paddin
 
 /* Keep display headings upright while giving the body copy an italic voice. */
 p:not(.eyebrow){font-style:italic}
+
+/* Horizontal roster: three cards on wide screens, one on phones. */
+.artist-carousel-controls{display:flex;justify-content:flex-end;gap:10px;margin:-8px 0 20px}
+.artist-carousel-controls button:disabled{opacity:.35;cursor:not-allowed}
+.artist-grid{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 50px)/3);grid-template-columns:none;gap:25px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--yellow) transparent;padding-bottom:12px;scroll-behavior:smooth}
+.artist-grid .artist-card{min-width:0;scroll-snap-align:start}
+@media(max-width:950px){.artist-grid{gap:16px;grid-auto-columns:calc((100% - 32px)/3)}}
+@media(max-width:650px){.artist-grid{grid-auto-columns:100%;gap:16px}.artist-carousel-controls{margin:0 0 18px}}
+@media(prefers-reduced-motion:reduce){.artist-grid{scroll-behavior:auto}}
